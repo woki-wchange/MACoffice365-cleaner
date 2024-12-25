@@ -45,29 +45,31 @@
 
 
 4.	查看执行过程
-	•	脚本会首先提示你是否进行扫描并删除；
-	•	扫描完成后，会再次询问是否删除所列出的残留文件；
-	•	若确认，将执行删除操作并打印已删除的文件/目录列表。
-6.	重启系统（推荐）
+  
+•	脚本会首先提示你是否进行扫描并删除；  
+•	扫描完成后，会再次询问是否删除所列出的残留文件；  
+•	若确认，将执行删除操作并打印已删除的文件/目录列表。 
+  
+5.	重启系统（推荐）
 执行完毕后，最好重启一下电脑，然后可在 Finder 中搜索 Microsoft、Office、Outlook 等，检查是否还有遗留文件。
 
-注意事项
+注意事项:  
+  
+•	谨慎操作：删除操作不可恢复；请事先确认要清理的文件都是不再需要的。  
+•	管理员权限：部分系统级目录（/Library）需要管理员权限。运行脚本时，可能需要输入 sudo 密码。  
+•	钥匙串(Keychain)：如果需要删除 Office/Outlook 的密码或激活信息，需要手动在「钥匙串访问」里搜索 Microsoft、Office、Outlook 并删除对应条目。脚本无法自动处理钥匙串内容。  
+•	定制：如果你的 Office/Teams/OneDrive 安装路径或名称与默认不同，可自行编辑脚本相关目录或关键字。   
 
-	•	谨慎操作：删除操作不可恢复；请事先确认要清理的文件都是不再需要的。
-	•	管理员权限：部分系统级目录（/Library）需要管理员权限。运行脚本时，可能需要输入 sudo 密码。
-	•	钥匙串(Keychain)：如果需要删除 Office/Outlook 的密码或激活信息，需要手动在「钥匙串访问」里搜索 Microsoft、Office、Outlook 并删除对应条目。脚本无法自动处理钥匙串内容。
-	•	定制：如果你的 Office/Teams/OneDrive 安装路径或名称与默认不同，可自行编辑脚本相关目录或关键字。
-	•	测试环境：建议先在测试环境或虚拟机中试运行该脚本，确保你了解脚本的行为。
+常见问题  
 
-常见问题
-	1.	运行后找不到任何文件删除？
-说明系统中可能已无 Microsoft 相关残留，或之前已被手动/其他工具清理干净。脚本只会删除存在的目标。
-	2.	脚本执行后依然有部分残留？
-可能位于自定义路径或脚本中未包含的目录。可手动搜索/删除。
-	3.	脚本执行过程中出现 No such file or directory 报错？
-文件/目录已不存在，可忽略此提示，脚本会继续执行。
-	4.	如何再安装 Office？
-如果需要再次安装，建议从 Microsoft 官网 或 Mac App Store 获取最新版本。
+1.	运行后找不到任何文件删除？  
+说明系统中可能已无 Microsoft 相关残留，或之前已被手动/其他工具清理干净。脚本只会删除存在的目标。  
+2.	脚本执行后依然有部分残留？  
+可能位于自定义路径或脚本中未包含的目录。可手动搜索/删除。  
+3.	脚本执行过程中出现 No such file or directory 报错？  
+文件/目录已不存在，可忽略此提示，脚本会继续执行。  
+4.	如何再安装 Office？  
+如果需要再次安装，建议从 Microsoft 官网 或 Mac App Store 获取最新版本。  
 
 English Version
 
@@ -78,22 +80,28 @@ This script is particularly useful when you want a completely clean uninstallati
 
 	Warning: The script uses rm -rf to remove files, which is irreversible. Make sure to backup your data and review the script before executing it.
 
-Features
-	1.	Terminate related processes
-Automatically kills processes like Office, Teams, OneDrive, and Microsoft AutoUpdate to avoid locked files.
-	2.	Collect leftover files
-Uses find to search common directories (e.g. ~/Library and /Library) for leftover files and prompts you before removal.
-	3.	Confirmation before deletion
-The script will list all detected items and ask for confirmation, preventing accidental deletions.
-	4.	Wide coverage
-	•	/Applications (Word, Excel, Outlook, OneNote, Teams, etc.)
-	•	~/Library (Containers, Caches, Preferences, Group Containers, etc.)
-	•	/Library (LaunchAgents, LaunchDaemons, Application Support, etc.)
+Features  
 
-Usage
-	1.	Download the script
-Clone or download cleanup_office.sh to your local machine (e.g., ~/Downloads).
-	2.	Make it executable (if it isn’t already)
+1.	Terminate related processes  
+Automatically kills processes like Office, Teams, OneDrive, and Microsoft AutoUpdate to avoid locked files.  
+2.	Collect leftover files  
+Uses find to search common directories (e.g. ~/Library and /Library) for leftover files and prompts you before removal.  
+3.	Confirmation before deletion  
+The script will list all detected items and ask for confirmation, preventing accidental deletions.  
+4.	Wide coverage。  
+  
+	•	/Applications (Word, Excel, Outlook, OneNote, Teams, etc.)  
+	•	~/Library (Containers, Caches, Preferences, Group Containers, etc.)  
+	•	/Library (LaunchAgents, LaunchDaemons, Application Support, etc.)  
+
+Usage  
+  
+1.	Download the script
+  
+Clone or download cleanup_office.sh to your local machine (e.g., ~/Downloads).  
+  
+2.	Make it executable (if it isn’t already)  
+  
 
    `chmod +x cleanup_office.sh`
 
@@ -103,18 +111,22 @@ Clone or download cleanup_office.sh to your local machine (e.g., ~/Downloads).
    `./cleanup_office.sh`
 
 4.	Follow the prompts
-	•	The script will first ask if you want to scan and remove leftovers;
-	•	After scanning, it will list all detected items and ask for confirmation;
-	•	If confirmed, it will remove those files and print the removed paths.
+  
+•	The script will first ask if you want to scan and remove leftovers;  
+•	After scanning, it will list all detected items and ask for confirmation;  
+•	If confirmed, it will remove those files and print the removed paths.  
+  
 5.	Reboot (recommended)
+     
 After finishing, we recommend you reboot the system and then use Finder to search for Microsoft, Office, or Outlook to ensure no leftovers remain.
 
-Notes
-	•	Use with caution: Deletion is permanent. Double-check the listed items before confirming.
-	•	Administrator privileges: Some directories in /Library require admin privileges, so you may be prompted for sudo.
-	•	Keychain: If you need to remove Office/Outlook credentials, you must do so manually in “Keychain Access” by searching Microsoft, Office, or Outlook.
-	•	Customization: If Office/Teams/OneDrive was installed in a custom path or has different names, edit the script accordingly.
-	•	Test environment first: Always recommended to try the script in a non-critical or test environment to be absolutely sure of its effects.
+Notes  
+  
+•	Use with caution: Deletion is permanent. Double-check the listed items before confirming.  
+•	Administrator privileges: Some directories in /Library require admin privileges, so you may be prompted for sudo.  
+•	Keychain: If you need to remove Office/Outlook credentials, you must do so manually in “Keychain Access” by searching Microsoft, Office, or Outlook.  
+•	Customization: If Office/Teams/OneDrive was installed in a custom path or has different names, edit the script accordingly.  
+
 
 ##FAQ
 	1.	No files found to remove?
