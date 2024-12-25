@@ -1,9 +1,8 @@
-# Cleanup Office for macOS
+# MACoffice365-cleaner
 
 本项目提供了一个用于清理 macOS 上 Microsoft Office / Microsoft 365 及其相关残留文件的脚本。
 
-[English](#english-version)
-
+[Chinese][English]
 ---
 
 ## 简体中文
@@ -37,23 +36,19 @@
    将脚本文件（`cleanup_office.sh`）克隆或下载到本地，例如放置于 `~/Downloads`。
 
 2. **赋予可执行权限**（若脚本尚无执行权限）  
-   ```bash
-   chmod +x cleanup_office.sh
 
-	3.	运行脚本
+   `chmod +x cleanup_office.sh`
 
-./cleanup_office.sh
+3.	运行脚本
 
-或者
-
-bash cleanup_office.sh
+   `./cleanup_office.sh`
 
 
-	4.	查看执行过程
+4.	查看执行过程
 	•	脚本会首先提示你是否进行扫描并删除；
 	•	扫描完成后，会再次询问是否删除所列出的残留文件；
 	•	若确认，将执行删除操作并打印已删除的文件/目录列表。
-	5.	重启系统（推荐）
+5.	重启系统（推荐）
 执行完毕后，最好重启一下电脑，然后可在 Finder 中搜索 Microsoft、Office、Outlook 等，检查是否还有遗留文件。
 
 注意事项
@@ -99,23 +94,18 @@ Usage
 Clone or download cleanup_office.sh to your local machine (e.g., ~/Downloads).
 	2.	Make it executable (if it isn’t already)
 
-chmod +x cleanup_office.sh
+   `chmod +x cleanup_office.sh`
 
 
-	3.	Run the script
+3.	Run the script
 
-./cleanup_office.sh
+   `./cleanup_office.sh`
 
-or
-
-bash cleanup_office.sh
-
-
-	4.	Follow the prompts
+4.	Follow the prompts
 	•	The script will first ask if you want to scan and remove leftovers;
 	•	After scanning, it will list all detected items and ask for confirmation;
 	•	If confirmed, it will remove those files and print the removed paths.
-	5.	Reboot (recommended)
+5.	Reboot (recommended)
 After finishing, we recommend you reboot the system and then use Finder to search for Microsoft, Office, or Outlook to ensure no leftovers remain.
 
 Notes
@@ -125,7 +115,7 @@ Notes
 	•	Customization: If Office/Teams/OneDrive was installed in a custom path or has different names, edit the script accordingly.
 	•	Test environment first: Always recommended to try the script in a non-critical or test environment to be absolutely sure of its effects.
 
-FAQ
+##FAQ
 	1.	No files found to remove?
 Likely your system is already clean of Microsoft leftovers, or they were removed previously.
 	2.	Leftovers remain after running?
@@ -135,20 +125,7 @@ It means the file/folder was not found. These errors can be safely ignored.
 	4.	How to reinstall Office?
 Download the latest version directly from the Microsoft website or the Mac App Store.
 
-License
-
-This script is released under the MIT License. You are free to use, modify, and distribute it, as long as you include the original license.
-
-Author: Your Name
-Repository: GitHub URL Here
+Author: Kukkori
 
 欢迎提交 Issues 或 Pull Requests 来改进脚本的兼容性与覆盖范围。
 Feel free to open Issues or submit Pull Requests to improve the script.
-
----
-
-> **提示**：  
-> 1. 以上是完整的 `README.md` 模板，可直接复制到 GitHub 仓库的 `README.md` 文件中，无需进行额外的缩进或调整。  
-> 2. 如果你的仓库中有一个 `LICENSE` 文件是 MIT 协议，以上 “License” 部分即可正常引用。若使用其他许可证，请相应修改。  
-> 3. 将 `Your Name` 和 `[GitHub URL Here]` 替换为实际的作者名与仓库 URL。  
-> 4. 如果你不需要英文说明，可删掉 **English Version** 之后的内容；或如你不需要中文说明，就删掉中文部分。  
