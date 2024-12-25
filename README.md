@@ -37,11 +37,11 @@
 
 2. **赋予可执行权限**（若脚本尚无执行权限）  
 
-   `chmod +x cleanup_office.sh`
+ `chmod +x cleanup_office.sh`
 
 3.	运行脚本
 
-   `./cleanup_office.sh`
+`./cleanup_office.sh`
 
 
 4.	查看执行过程
